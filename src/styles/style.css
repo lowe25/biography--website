@@ -19,18 +19,6 @@ html {
 }
 
 @layer components {
-  th {
-    font-weight: 400;
-  }
-}
-
-@layer components {
-  .td-width {
-    width: 9%;
-  }
-}
-
-@layer components {
   .max-width {
     max-width: 1200px;
     width: 100%;

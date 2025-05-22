@@ -17,7 +17,7 @@ const Navbar = () => {
         <nav
           className={`z-50 absolute top-[70px] left-0 w-full md:static max-md:block md:w-full max-md:transition-all duration-300 ease-in-out ${
             menuOpen
-              ? "opacity-100 transition-y-0 pointer-events-auto max-md:bg-[red]"
+              ? "opacity-100 transition-y-0 pointer-events-auto max-md:bg-[#000]"
               : "opacity-0 -translate-y-2 pointer-events-none md:opacity-100 md:translate-y-0 md:pointer-events-auto"
           }`}
         >
