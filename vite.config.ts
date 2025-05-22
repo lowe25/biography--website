@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000,
   },
   //Remove for uploading
-  base: "/biography--website/",
+  //base: "/biography--website/",
   build: {
     outDir: "docs",
   },
