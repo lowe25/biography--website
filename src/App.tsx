@@ -1,15 +1,28 @@
-import './styles/style.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+import Home from './pages/Home';
+import About from './pages/About';
+import Profile from './pages/Profile';
+
+import './styles/style.css';
 
 function App() {
-
   return (
-    <>
-    <div className='max-width'>
-      <h1 className="text-orange py-px text-blue-600 block text-[3rem]">Hello world</h1>
-      <p className="text-red-700 text-[1.6rem]">HELLO WORLD</p>
-    </div>
-    </>
-  )
+    <Router>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
+export default App;
