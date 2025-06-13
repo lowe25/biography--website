@@ -1,32 +1,20 @@
-import axios from "axios";
-
-const BASE_URL = "http://rest.nbaapi.com/api";
+import regSeason from "../data/regSeason.json";
+import postSeason from "../data/playoffs.json";
 
 export const getPlayerStats = async (playerName: string) => {
-  const response = await axios.get(`${BASE_URL}/PlayerDataTotals/query`, {
-    params: {
-      playerName,
-      sortBy: "PlayerName",
-      ascending: true,
-      pageNumber: 1,
-      pageSize: 30,
-    },
-  });
-  return response.data;
+  const players = regSeason.players;
+  const filtered = players.filter((p) =>
+    p.playerName.toLowerCase().includes(playerName.toLowerCase())
+  );
+
+  return filtered;
 };
 
-export const getPlayerStatsPost = async (playerName: string) => {
-  const response = await axios.get(
-    `${BASE_URL}/PlayerDataTotalsPlayoffs/query`,
-    {
-      params: {
-        playerName,
-        sortBy: "PlayerName",
-        ascending: true,
-        pageNumber: 1,
-        pageSize: 30,
-      },
-    }
+export const getPlayerpost = async (playerName: string) => {
+  const players = postSeason.players;
+  const filtered = players.filter((p) =>
+    p.playerName.toLowerCase().includes(playerName.toLowerCase())
   );
-  return response.data;
+
+  return filtered;
 };
